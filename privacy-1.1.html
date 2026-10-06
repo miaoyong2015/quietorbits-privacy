@@ -15,7 +15,7 @@
     <li>只有你主动打开 Nova 并同意提示后，应用才会联网发送你输入的问题、最多三轮对话上下文、所选语言与当前天体。请不要输入姓名、学校、地址或其他个人信息。</li>
     <li>应用会发送一个随机生成的安装标识，用于免费次数和使用限额。该标识保存在设备钥匙串中，重新安装后可能继续存在。服务器使用其哈希值记录次数，不用它投放广告或追踪其他应用。</li>
     <li>问题由我们在 Cloudflare 上运行的 AI 服务处理。我们的应用数据库不保存原始问题或对话上下文；为避免重复生成，会缓存回答及后续问题建议，最长 30 天。限额记录最长保留约 400 天，IP 地址的哈希限额记录约 2 天。</li>
-    <li>选择 Nova 的在线朗读时，回答文字会发送至火山引擎/豆包语音服务以生成音频。生成的音频会在我们的服务器缓存最长 30 天；服务不可用时使用设备上的系统语音。语音输入由设备系统的语音识别服务处理，具体处理方式取决于设备设置和系统服务。</li>
+    <li>选择 Nova 的在线朗读时，回答文字会发送至 Cloudflare 托管的 MeloTTS 模型以生成音频。当前在线成人配音支持中、英、日、韩、法、西班牙语，其余语言或音色使用系统朗读。生成的音频会在我们的服务器缓存最长 30 天；服务不可用时使用设备上的系统语音。语音输入由设备系统的语音识别服务处理，具体处理方式取决于设备设置和系统服务。</li>
     <li>如果使用 Pro，我们会把 Apple 签名的购买凭证发送给服务器验证权限，并保留购买交易编号的哈希值作为用量限制记录，约两天后由每日清理任务删除。付款由 Apple 处理，我们不会收到支付卡资料。</li>
   </ul>
   <h2>我的星球护照</h2>
@@ -36,7 +36,7 @@
     <li>Only after you open Nova and accept its notice does the app send your question, up to three previous exchanges, your selected language, and the current celestial body online. Please do not enter names, schools, addresses, or other personal information.</li>
     <li>The app sends a random installation identifier to manage free trials and usage limits. It is kept in the device Keychain and may survive reinstalling the app. Our server stores a hash of it for quota records. We do not use it for advertising or tracking across apps.</li>
     <li>Our AI service runs on Cloudflare. Our application database does not store raw questions or conversation history. To avoid regenerating common answers, it caches answers and suggested follow-up questions for up to 30 days. Quota records are kept for up to approximately 400 days; hashed IP quota records for approximately two days.</li>
-    <li>If you choose Nova's online narration, answer text is sent to Volcengine/Doubao to generate audio. The generated audio is cached on our server for up to 30 days. If that service fails, the app uses the device's system voice. Voice input is handled by the device's speech recognition service; its processing depends on your device settings and system service.</li>
+    <li>If you choose Nova's online narration, answer text is sent to the MeloTTS model hosted by Cloudflare to generate audio. Online adult narration currently supports Chinese, English, Japanese, Korean, French and Spanish; other languages or voice styles use system narration. The generated audio is cached on our server for up to 30 days. If that service fails, the app uses the device's system voice. Voice input is handled by the device's speech recognition service; its processing depends on your device settings and system service.</li>
     <li>For Pro, we send an Apple-signed purchase transaction to our server to verify access. We retain a hash of its transaction identifier for usage limits; a daily cleanup removes it after approximately two days. Apple handles payment; we do not receive payment-card details.</li>
   </ul>
   <h2>My Space Passport</h2>
